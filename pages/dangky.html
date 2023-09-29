@@ -1,0 +1,71 @@
+<div class="boxContain container-fluid d-flex justify-content-center align-items-center">
+    <div class="boxVip p-4">
+        <h1 class="fw-bold text-center mb-4" style="color:#72A603; ">THÔNG TIN ĐĂNG KÝ</h1>
+        <form name="dangky">
+            <label for="fname">Họ Và Tên:</label><br>
+            <input type="text" id="fname" name="ten" value="" class="inpInfo" ng-model="info.ten" required><br>
+            <span ng-show="dangky.ten.$invalid && dangky.ten.$dirty" class="text-danger">Họ và Tên là bắt
+                buộc
+                nhập</span> <br>
+            <label for="fname">Tài Khoản:</label><br>
+            <input type="text" id="fname" name="taikhoan" value="" class="inpInfo" ng-model="info.taikhoan"
+                required><br>
+            <span ng-show="dangky.taikhoan.$invalid && dangky.taikhoan.$dirty" class="text-danger">Tài Khoản là bắt
+                buộc
+                nhập</span> <br>
+            <label for="fname">Email:</label><br>
+            <input type="text" id="fname" name="email" value="" class="inpInfo" ng-model="info.email" required><br>
+            <span ng-show="dangky.email.$invalid && dangky.email.$dirty" class="text-danger">Email là bắt
+                buộc
+                nhập</span><br>
+
+            <label for="fname">Số Điện Thoại:</label><br>
+            <input type="text" id="fname" name="sdt" value="" class="inpInfo" ng-model="info.phone" required><br>
+            <span ng-show="dangky.sdt.$invalid && dangky.sdt.$dirty" class="text-danger">Số điện thoại là bắt
+                buộc
+                nhập</span><br>
+
+
+            <label for="fname">Mật Khẩu:</label><br>
+            <input type="text" id="fname" name="matkhau" value="" class="inpInfo" ng-model="info.matkhau" required><br>
+            <span ng-show="dangky.matkhau.$invalid && dangky.matkhau.$dirty" class="text-danger">Mật Khẩu là
+                bắt
+                buộc
+                nhập</span><br>
+            <label for="lname">Nhập Lại Mật Khẩu:</label><br>
+            <input type="text" id="lname" name="XacNhanMatKhau" value="" class="inpInfo" ng-model="matkhau"
+                required><br>
+            <span ng-show="dangky.XacNhanMatKhau.$invalid && dangky.XacNhanMatKhau.$dirty" class="text-danger">Không để
+                trống trường
+                này</span><br>
+            <span ng-show="info.matkhau!=matkhau && dangky.XacNhanMatKhau.$dirty" class="text-danger">Vui lòng nhập đúng
+                xác nhận mật khẩu</span><br>
+
+            <br>
+            <div class="text-center m-3">
+
+                <button class="btnDangKy btn btn-primary" style="background-color: #72A603;" ng-click="dangkytaikhoan()"
+                    ng-disabled="dangky.$invalid" data-bs-toggle="modal" data-bs-target="#message">Đăng
+                    Ký</button><br>
+            </div>
+            <span>Bạn đã có tài khoản <a href="#dangnhap" class="text-decoration-none">Đăng Nhập</a></span>
+
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="message" tabindex="-1" aria-labelledby="ThemDanhMuc" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Thông Báo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+                <span>{{message}}</span>
+
+            </div>
+
+        </div>
+    </div>
+</div>

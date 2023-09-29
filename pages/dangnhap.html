@@ -1,0 +1,42 @@
+<section>
+    <div class="boxContain ">
+        <div class="box p-4">
+            <h1 class="fw-bold text-center mb-4" style="color:#72A603">Đăng Nhập</h1>
+            <form>
+                <label for="fname">Tài Khoản:</label><br>
+                <input type="text" id="fname" name="fname" value="" class="inpInfo" ng-model="taikhoan"><br>
+                <label for="lname">Mật Khẩu:</label><br>
+                <input type="text" id="lname" name="lname" value="" class="inpInfo" ng-model="matkhau"><br><br>
+                <input type="checkbox" name="" id="">
+                <label for="">Lưu mật khẩu</label>
+                <br>
+                <div class="text-center m-3">
+
+                    <button class="btnDangNhap btn btn-primary" style="background-color: #72A603;"
+                        ng-click="dangnhap()">Đăng
+                        Nhập</button><br>
+                </div>
+                <span><a href="" class=" text-decoration-none" style="color: #72A603">Quên Mật
+                        Khẩu</a></span><br>
+                <span>Bạn chưa có tài khoản? <a href="#dangky" class="text-decoration-none" style="color: #72A603">Đăng
+                        kí
+                        ngay</a></span>
+            </form>
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="message" tabindex="-1" aria-labelledby="ThemDanhMuc" aria-hidden="true" ng>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Thông Báo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+                <span>Sai Tài Khoản Mật Khẩu</span>
+
+            </div>
+
+        </div>
+    </div>
+</div>

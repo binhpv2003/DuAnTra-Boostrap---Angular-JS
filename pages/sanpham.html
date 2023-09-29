@@ -1,0 +1,158 @@
+<section class="container">
+
+    <div class="d-flex justify-content-between  pt-4 pb-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#trangchu">Trang Chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Trà </li>
+
+            </ol>
+        </nav>
+        <div>Hiển Thị Tất cả <span>{{count}}</span> kết quả</div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-2">
+            <div>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Danh Mục
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="row mb-1 " ng-repeat="a in arrDanhMuc">
+                                    <a ng-click="onclick($index)" class="mb-3 text-decoration-none text-dark">
+                                        {{a.tenDanhMuc}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <hr>
+            <div>
+                <h4>Lọc Theo Giá</h4> <br>
+                <input type="radio" name="loc" id="" ng-model="loc" value="0"><strong>Dưới 500.000VNĐ</strong> <br>
+                <input type="radio" name="loc" id="" ng-model="loc" value="1"><strong>Trên 500.000VNĐ</strong><br>
+                <br><button class="btnSanPham mb-5" ng-click="locProduct()">Lọc</button>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <h4>Sản Phẩm</h4><br>
+                <div class="col-md-3 containProduct " ng-repeat="a in arrProduct">
+                    <a href="#/chi-tiet-sp/{{a.maSP}}" class="text-decoration-none text-dark">
+                        <div class="card productItem pb-3">
+                            <img ng-src="./img/{{a.hinhAnh}}" class="card-img-top img-fluid imgProduct" alt="..."
+                                style="height: 50%;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fs-4 ">{{a.tenSanPham}}</h5>
+                                <p class="card-text  fs-5 fw-bold pb-3">{{a.giaSanPham | number:0}} VNĐ</p>
+                                <p>Số Lượng: {{a.soLuong}}</p>
+                                <a href="#" class=" btnProductTra" data-bs-toggle="modal" data-bs-target="#ThemSoLuong"
+                                    ng-model="showBtn" ng-click="getInfo(a.maSP,1)">Mua
+                                    Ngay</a>
+                                <a href="#" class=" btnProductTra" data-bs-toggle="modal" data-bs-target="#ThemSoLuong"
+                                    ng-model="showGioHang" ng-click="getInfo(a.maSP,2)">Thêm giỏ hàng</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <nav aria-label="Page navigation example" ng-show="count > 8">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="ThemSoLuong" tabindex="-1" aria-labelledby="ThemDanhMuc" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" ng-show="!isLogin">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Mua Sản Phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    Vui Lòng Đăng Nhập Để Mua Hàng
+                </div>
+
+
+
+            </div>
+            <div class="modal-content" ng-show="isLogin">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Mua Sản Phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <div class="col-md-3 col-xs-12">
+                        <img ng-src="./img/{{itemProduct.hinhAnh}}" alt="">
+                    </div>
+                    <div class="col-md-9 col-xs-12">
+
+
+
+
+
+                        <h2>{{itemProduct.tenSanPham}}</h2>
+                        <span>Mã SP: {{itemProduct.maSP}}</span>
+                        <hr>
+                        <div class="infoProduct">
+                            <h5>Mô Tả</h5>
+                            <p>{{itemProduct.moTaSanPham}}</p>
+
+                            <hr>
+
+                            <div class="price">
+                                <span class="fs-4 text-danger fw-bold">{{itemProduct.giaSanPham | number:0}} VNĐ</span>
+                                <span class="fs-5 text-decoration-line-through">{{itemProduct.giaGoc| number:0}}
+                                    VNĐ</span>
+                            </div>
+
+                            <div>
+                                <br>
+                                <label for="" class="fw-bold">Số Lượng:</label>
+                                <input class="text-center" type="number" name="" id="" min="1"
+                                    max="{{itemProduct.soLuong}}" value="1" style="width: 50px;"
+                                    ng-model="soLuongGioHang">
+
+                            </div>
+                            <div class="mt-5">
+                                <button type="button" class="btn btn-primary fs-5 " style="background-color: #72A603;"
+                                    ng-show="showGioHang" ng-click="themGiohang()">Thêm
+                                    Vào Giỏ Hàng</button>
+                                <a href="#thanhtoan" data-bs-dismiss="modal" aria-label="Close"><button type="button"
+                                        class="btn btn-secondary fs-5" style="background-color: #72A603;"
+                                        ng-show="showBtn" ng-click="muaNgay()">Mua
+                                        Ngay</button></a>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

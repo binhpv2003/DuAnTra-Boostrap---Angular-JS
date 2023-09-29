@@ -1,0 +1,51 @@
+<div class="container mt-5">
+
+    <div ng-show="checkDonHang()">
+        <div class="row">
+            <span class="text-center fs-1 fw-bold">Đơn Hàng Đã Mua</span>
+        </div>
+        <div class="d-flex justify-content-end"><span class="fs-5 fw-bold">Tổng: {{tongTienUser| number:0}}
+                VNĐ</span>
+        </div>
+        <div>
+            <div class=" table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-light ">
+
+                        <tr>
+                            <th class="col-md-1 fw-bold">Mã Hóa Đơn</th>
+                            <th class="col-md-1 fw-bold">ID Khách Hàng</th>
+                            <th class="col-md-3 fw-bold">Khách Hàng</th>
+                            <th class="col-md-2 fw-bold">Ngày Đặt Hàng</th>
+                            <th class="col-md-2 fw-bold">Thành Tiền</th>
+                            <th class="col-md-2 fw-bold">Trạng Thái</th>
+                            <th class="col-md-2 fw-bold">Hành Động</th>
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr class="" ng-repeat="a in arrDonHangUser">
+                            <td data-label="Mã Hóa Đơn">{{a.maHoaDon}}</td>
+                            <td data-label="ID Khách Hàng">{{a.idKhachHang}}</td>
+                            <td data-label="Khách Hàng">{{a.khachHang}}</td>
+                            <td data-label="Ngày Đặt Hàng">{{a.ngayDat}}</td>
+                            <td data-label="Thành Tiền">{{a.ThanhTien | number:0}} VNĐ</td>
+                            <td data-label="Trạng Thái">{{a.TrangThai==true?'Thành Công':'Hủy Đơn'}}</td>
+                            <td data-label="Chức Năng">
+
+                                <i class="fa-solid fa-eye text-success ms-2" ng-click="" data-bs-toggle="modal"
+                                    data-bs-target=""></i>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <div ng-show="!checkDonHang()" class="row">
+        <span class="fs-1 text-center" style="color: #72A603; height: 500px;">Bạn chưa có đơn hàng nào</span>
+    </div>
+</div>

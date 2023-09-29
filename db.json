@@ -1,0 +1,395 @@
+{
+  "account": [
+    {
+      "id": 1,
+      "taikhoan": "a",
+      "matkhau": "s",
+      "ten": "Phạm Văn Bình",
+      "email": "binhpvph29510@fpt.edu.vn",
+      "phone": "0928790471",
+      "quyen": true,
+      "trangThai": true
+    },
+    {
+      "ten": "Đặng Ánh Nguyệt",
+      "email": "binhpvph29510@fpt.edu.vn",
+      "phone": "VipPro",
+      "matkhau": "1",
+      "taikhoan": "1",
+      "quyen": false,
+      "trangThai": true,
+      "id": 2
+    },
+    {
+      "taikhoan": "s",
+      "matkhau": "s",
+      "ten": "Phạm Hùng",
+      "email": "binh@gmail.com",
+      "phone": "0345262229",
+      "quyen": false,
+      "trangThai": true,
+      "id": 3
+    },
+    {
+      "taikhoan": "a1",
+      "matkhau": "a",
+      "ten": "a",
+      "email": "a",
+      "phone": "a",
+      "quyen": false,
+      "trangThai": true,
+      "id": 4
+    },
+    {
+      "ten": "Bình",
+      "email": "binhpvph29510@fpt.edu.vn",
+      "phone": "0345262229",
+      "taikhoan": "2",
+      "matkhau": "2",
+      "quyen": "2",
+      "trangThai": true,
+      "id": 5
+    }
+  ],
+  "tintuc": [
+    {
+      "id": 1,
+      "hinhanh": "image13.png",
+      "title": "Tăng cường hệ miễn dịch với trà thảo mộc",
+      "content": "Nghe có vẻ đáng kinh ngạc, có rất nhiều loại trà thảo mộc có thể giúp hệ thống miễn dịch của chúng ta sẵn sàng chống lại các mối đe dọa bên ngoài. Ở đây..."
+    },
+    {
+      "id": 2,
+      "hinhanh": "image14.png",
+      "title": "Tăng cường hệ miễn dịch với trà thảo mộc",
+      "content": "Nghe có vẻ đáng kinh ngạc, có rất nhiều loại trà thảo mộc có thể giúp hệ thống miễn dịch của chúng ta sẵn sàng chống lại các mối đe dọa bên ngoài. Ở đây..."
+    },
+    {
+      "id": 3,
+      "hinhanh": "image15.png",
+      "title": "Tăng cường hệ miễn dịch với trà thảo mộc",
+      "content": "Nghe có vẻ đáng kinh ngạc, có rất nhiều loại trà thảo mộc có thể giúp hệ thống miễn dịch của chúng ta sẵn sàng chống lại các mối đe dọa bên ngoài. Ở đây..."
+    },
+    {
+      "id": 4,
+      "hinhanh": "image16.png",
+      "title": "Tăng cường hệ miễn dịch với trà thảo mộc",
+      "content": "Nghe có vẻ đáng kinh ngạc, có rất nhiều loại trà thảo mộc có thể giúp hệ thống miễn dịch của chúng ta sẵn sàng chống lại các mối đe dọa bên ngoài. Ở đây..."
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "maSP": "SP01",
+      "hinhAnh": "image6.png",
+      "tenSanPham": "Trà Bồ Công Anh",
+      "giaSanPham": 150000,
+      "giaGoc": 250000,
+      "soLuong": 228,
+      "moTaSanPham": "Rất tốt cho sức khỏe",
+      "trangThai": true,
+      "danhMuc": "8"
+    },
+    {
+      "id": 2,
+      "maSP": "SP02",
+      "hinhAnh": "image 3.png",
+      "tenSanPham": "Trà Tâm Sen",
+      "giaSanPham": 150000,
+      "giaGoc": 250000,
+      "soLuong": 76,
+      "moTaSanPham": "Rất tốt cho sức khỏe",
+      "trangThai": false,
+      "danhMuc": "1"
+    },
+    {
+      "id": 3,
+      "maSP": "SP03",
+      "hinhAnh": "image17.png",
+      "tenSanPham": "Trà Hoa Kỳ Tử Đỏ",
+      "giaSanPham": 149000,
+      "giaGoc": 250000,
+      "soLuong": 133,
+      "moTaSanPham": "Rất tốt cho sức khỏe",
+      "trangThai": true,
+      "danhMuc": "1"
+    },
+    {
+      "id": 4,
+      "maSP": "SP04",
+      "hinhAnh": "image 1.png",
+      "tenSanPham": "Trà Cam Thảo",
+      "giaSanPham": 150000,
+      "giaGoc": 250000,
+      "soLuong": 128,
+      "moTaSanPham": "Rất tốt cho sức khỏe",
+      "trangThai": true,
+      "danhMuc": "4"
+    },
+    {
+      "id": 5,
+      "maSP": "SP05",
+      "hinhAnh": "image 4.png",
+      "tenSanPham": "Cỏ Ngọt",
+      "giaSanPham": 150000,
+      "giaGoc": 250000,
+      "soLuong": 150,
+      "moTaSanPham": "Rất tốt cho sức khỏe",
+      "trangThai": true,
+      "danhMuc": "2"
+    },
+    {
+      "id": 6,
+      "maSP": "SP06",
+      "hinhAnh": "image 5.png",
+      "tenSanPham": "Trà Hoa Hồng",
+      "giaSanPham": 1550000,
+      "giaGoc": 250000,
+      "soLuong": 150,
+      "moTaSanPham": "Rất tốt cho sức khỏe",
+      "trangThai": true,
+      "danhMuc": "5"
+    },
+    {
+      "id": 7,
+      "maSP": "SP07",
+      "hinhAnh": "image 7.png",
+      "tenSanPham": "Trà Bạc Hà",
+      "giaSanPham": 150000,
+      "giaGoc": 250000,
+      "soLuong": 147,
+      "moTaSanPham": "Rất tốt cho sức khỏe",
+      "trangThai": true,
+      "danhMuc": "6"
+    },
+    {
+      "id": 8,
+      "maSP": "SP08",
+      "hinhAnh": "image4.png",
+      "tenSanPham": "Trà Xanh",
+      "giaSanPham": 150000,
+      "giaGoc": 250000,
+      "soLuong": 145,
+      "moTaSanPham": "Rất tốt cho sức khỏe",
+      "trangThai": true,
+      "danhMuc": "6"
+    },
+    {
+      "maSP": "SP09",
+      "hinhAnh": "image6.png",
+      "tenSanPham": "Hộp Quà",
+      "giaSanPham": 15000000,
+      "giaGoc": "20000000",
+      "soLuong": 150,
+      "moTaSanPham": "đf",
+      "trangThai": true,
+      "danhMuc": "6",
+      "id": 9
+    }
+  ],
+  "ChucNang": [
+    {
+      "id": 1,
+      "tenChucNang": "Quản Lý Người Dùng",
+      "maId": "1"
+    },
+    {
+      "id": 2,
+      "tenChucNang": "Quản Lý Danh Mục"
+    },
+    {
+      "id": 3,
+      "tenChucNang": "Quản Lý Sản Phẩm"
+    },
+    {
+      "id": 4,
+      "tenChucNang": "Quản Lý Đơn Hàng"
+    },
+    {
+      "id": 5,
+      "tenChucNang": "Quản Lý Tin Tức"
+    }
+  ],
+  "DanhMuc": [
+    {
+      "id": 0,
+      "tenDanhMuc": "Tất Cả",
+      "trangThai": true
+    },
+    {
+      "id": 1,
+      "tenDanhMuc": "Trà Thảo Mộc",
+      "trangThai": true
+    },
+    {
+      "id": 2,
+      "tenDanhMuc": "Trà Dưỡng Nhan",
+      "trangThai": true
+    },
+    {
+      "id": 3,
+      "tenDanhMuc": "Trà San Tuyết",
+      "trangThai": true
+    },
+    {
+      "id": 4,
+      "tenDanhMuc": "Trà Giảm Stress",
+      "trangThai": true
+    },
+    {
+      "id": 5,
+      "tenDanhMuc": "Trà Làm Ấm Cơ Thể",
+      "trangThai": true
+    },
+    {
+      "id": 6,
+      "tenDanhMuc": "Trà Thái",
+      "trangThai": true
+    },
+    {
+      "tenDanhMuc": "Hộp Quà Vip 5",
+      "trangThai": true,
+      "id": 7
+    },
+    {
+      "tenDanhMuc": "a",
+      "id": 8
+    }
+  ],
+  "giohang": [
+    {
+      "maSP": "SP01",
+      "hinhAnh": "image8.png",
+      "tenSanPham": "Trà Bồ Công Anh",
+      "giaSanPham": 150000,
+      "soLuong": 8,
+      "id": 1
+    },
+    {
+      "maSP": "SP02",
+      "hinhAnh": "image 3.png",
+      "tenSanPham": "Trà Tâm Sen",
+      "giaSanPham": 150000,
+      "soLuong": 6,
+      "id": 2
+    },
+    {
+      "maSP": "SP04",
+      "hinhAnh": "image 1.png",
+      "tenSanPham": "Trà Cam Thảo",
+      "giaSanPham": 150000,
+      "soLuong": 3,
+      "id": 5
+    }
+  ],
+  "DonHang": [
+    {
+      "idKhachHang": 1,
+      "maHoaDon": 60,
+      "khachHang": "Phạm Văn Nam",
+      "ngayDat": "2023-06-09T05:34:09.085Z",
+      "ThanhTien": 150000,
+      "TrangThai": true,
+      "id": 2
+    },
+    {
+      "idKhachHang": 1,
+      "maHoaDon": 64,
+      "khachHang": "Phạm Văn Nam",
+      "ngayDat": "2023-06-10T08:00:57.331Z",
+      "ThanhTien": 600000,
+      "TrangThai": true,
+      "id": 3
+    },
+    {
+      "idKhachHang": 1,
+      "maHoaDon": 80,
+      "khachHang": "Phạm Văn Nam",
+      "ngayDat": "2023-06-10T08:01:43.612Z",
+      "ThanhTien": 1500000,
+      "TrangThai": true,
+      "id": 4
+    },
+    {
+      "idKhachHang": 1,
+      "maHoaDon": 8,
+      "khachHang": "Phạm Văn Nam",
+      "ngayDat": "2023-06-10T08:01:48.340Z",
+      "ThanhTien": 1500000,
+      "TrangThai": true,
+      "id": 5
+    },
+    {
+      "idKhachHang": 2,
+      "maHoaDon": 80,
+      "khachHang": "Đặng Ánh Nguyệt",
+      "ngayDat": "2023-06-10T08:04:11.258Z",
+      "ThanhTien": 150000,
+      "TrangThai": true,
+      "id": 6
+    },
+    {
+      "idKhachHang": 1,
+      "maHoaDon": 2,
+      "khachHang": "Phạm Văn Bình",
+      "ngayDat": "2023-06-11T04:16:22.809Z",
+      "ThanhTien": 150000,
+      "TrangThai": true,
+      "id": 7
+    },
+    {
+      "idKhachHang": 1,
+      "maHoaDon": 43,
+      "khachHang": "Phạm Văn Bình",
+      "ngayDat": "2023-06-13T08:41:56.806Z",
+      "ThanhTien": 3300000,
+      "TrangThai": true,
+      "id": 8
+    },
+    {
+      "idKhachHang": 1,
+      "maHoaDon": 72,
+      "khachHang": "Phạm Văn Bình",
+      "ngayDat": "2023-06-26T00:47:20.706Z",
+      "ThanhTien": 150000,
+      "TrangThai": true,
+      "id": 9
+    },
+    {
+      "idKhachHang": 1,
+      "maHoaDon": 26,
+      "khachHang": "Phạm Văn Bình",
+      "ngayDat": "2023-07-11T08:47:56.626Z",
+      "ThanhTien": 2700000,
+      "TrangThai": true,
+      "id": 10
+    },
+    {
+      "idKhachHang": 1,
+      "maHoaDon": 12,
+      "khachHang": "Phạm Văn Bình",
+      "ngayDat": "2023-07-11T08:47:59.624Z",
+      "ThanhTien": 2700000,
+      "TrangThai": true,
+      "id": 11
+    },
+    {
+      "idKhachHang": 1,
+      "maHoaDon": 35,
+      "khachHang": "Phạm Văn Bình",
+      "ngayDat": "2023-07-21T02:05:36.335Z",
+      "ThanhTien": 2550000,
+      "TrangThai": true,
+      "id": 12
+    },
+    {
+      "idKhachHang": 1,
+      "maHoaDon": 85,
+      "khachHang": "Phạm Văn Bình",
+      "ngayDat": "2023-07-21T02:06:33.320Z",
+      "ThanhTien": 149000,
+      "TrangThai": true,
+      "id": 13
+    }
+  ]
+}

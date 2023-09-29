@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 400;
+
+    box-sizing: border-box;
+}
+
+.boxContain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/anhnen.jpg);
+    background-size: cover;
+    height: 120vh;
+}
+
+.box {
+    width: 350px;
+    height: 450px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px 0px;
+    padding: 30px;
+}
+
+.boxVip {
+    width: 500px;
+    height: 780px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px 0px;
+    padding: 30px;
+}
+
+.inpInfo {
+    margin-top: 10px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #72A603;
+}
+
+.myheader {
+    background-color: #72A603;
+
+}
+
+.myMenu {
+    background-color: #72A603;
+    z-index: 2;
+}
+
+tfoot {
+
+    border-bottom: 1px white;
+}
+
+.formMenuSmall {
+
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 5px;
+    right: 0;
+    top: 65px;
+    z-index: 3;
+}
+
+.iconCart {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #72A603;
+}
+
+.countCart {
+    position: absolute;
+    top: -10px;
+    right: -4px;
+    color: #72A603;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #72A603;
+}
+
+.TongTien {
+    color: #72A603;
+}
+
+.btnSearch {
+    position: absolute;
+    right: 0;
+    width: 100px;
+    height: 35px;
+    background-color: #72A603;
+    border: 1px solid #72A603;
+
+}
+
+.btnSearch:hover {
+    box-shadow: 1px 1px 10px 1px rgb(105, 103, 103);
+
+}
+
+.formSearch {
+    position: relative;
+    width: 380px;
+    height: 35px;
+}
+
+.dropdown-hover:hover .dropdown-menu {
+    display: block;
+}
+
+.contentCauHoi {
+    height: 667px;
+}
+
+
+
+.tacdung {
+    color: #72A603;
+}
+
+.btnDocThem {
+    background-color: #72A603;
+    width: 148px;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btnProductTra {
+    background-color: #72A603;
+    color: white;
+    padding: 14px;
+    border-radius: 5px;
+    font-size: 11px;
+    text-decoration: none;
+
+}
+
+.btnProductTra:hover {
+    box-shadow: 1px 1px 15px 1px #797979;
+    color: white;
+    font-size: 12px;
+}
+
+
+.productTra {
+    position: relative;
+}
+
+.btnPrev {
+    position: absolute;
+    top: 45%;
+    background-color: #72A603;
+    border-radius: 999px;
+    border: none;
+    padding: 5px;
+}
+
+.btnNext {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    background-color: #72A603;
+    border-radius: 999px;
+    border: none;
+    padding: 5px;
+}
+
+.footerVip {
+    background-color: #72A603;
+
+}
+
+.mainGioHang {
+    color: #72A603;
+    border: none;
+    border-bottom: 3px solid #72A603;
+}
+
+.table {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.fa-sharp:hover {
+    font-size: 18px;
+
+}
+
+.fa-regular:hover {
+    font-size: 18px;
+
+}
+
+.table {
+    overflow: hidden;
+}
+
+.imgVip {
+    width: 100px;
+}
+
+@media(max-width:500px) {
+    .table thead {
+        display: none;
+    }
+
+    .table,
+    .table tbody,
+    .table tbody tr,
+    .table tbody td {
+        display: block;
+        width: 100%;
+        padding: 10px 6px;
+
+    }
+
+    .imgVip {
+        border-radius: 10px;
+        height: 100px;
+    }
+
+    .table tbody tr {
+        margin-bottom: 35px;
+
+
+    }
+
+
+    .table tbody td {
+        text-align: right;
+        padding-left: 60%;
+        position: relative;
+        word-wrap: break-word;
+    }
+
+    .table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        position: absolute;
+        left: 0;
+    }
+
+    .Vocher {
+        width: 90px;
+    }
+
+    .CotTrong {
+        display: none;
+    }
+
+
+
+
+}
+
+#pills-tab {
+    position: relative;
+}
+
+.form-label::after {
+    content: "*";
+    color: red;
+}
+
+.itemProduct {
+    width: 295px;
+    margin: 2px;
+
+
+}
+
+.productItem {
+    transition: transform 0.5s linear;
+}
+
+.productItem:hover {
+    box-shadow: 1px 1px 15px 1px rgb(105, 103, 103);
+    margin: 5px;
+    transform: translateY(-12px);
+}
+
+
+.slideVip {
+    width: 1213px;
+    display: flex;
+    height: 600px;
+    overflow: hidden;
+    align-items: center;
+    position: relative;
+
+}
+
+
+.containSP {
+    display: flex;
+    transition: transform 0.5s linear;
+
+}
+
+@media(max-width:500px) {
+    .slideVip {
+        width: 85%;
+
+    }
+}
+
+.btnSanPham {
+    background-color: #72A603;
+    color: white;
+    padding: 13px;
+    border-radius: 5px;
+    font-size: 10px;
+    text-decoration: none;
+
+}
+
+.btnSanPham:hover {
+    box-shadow: 1px 1px 15px 1px #797979;
+    color: white;
+    font-size: 11px;
+}
+
+.btnThemNguoiDung {
+    background-color: #72A603;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+@media (max-width: 500px) {
+    .containProduct {
+        width: 195px;
+        margin-bottom: 10px;
+
+    }
+
+    .card-title {
+        font-size: 15px !important;
+    }
+
+    .card-text {
+        font-size: 15px !important;
+    }
+
+
+    .btnSanPham {
+        display: inline-block;
+        padding: 5px;
+    }
+
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+.rdoQuyen {
+    width: 50%;
+}
+
+.menuUser {
+    position: absolute;
+    z-index: 5;
+
+    background-color: white;
+    border-radius: 5px;
+}

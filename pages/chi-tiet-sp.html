@@ -1,0 +1,156 @@
+<section class="container pt-5">
+    <span class="fs-2 fw-bold " style="color: #72A603;">Chi Tiết Sản Phẩm</span>
+    <hr>
+    <div class="row">
+        <div class="col-md-3 col-xs-12">
+            <img ng-src="./img/{{SanPham.hinhAnh}}" alt="">
+        </div>
+        <div class="col-md-9 col-xs-12">
+
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="./index.html">Trang Chủ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{SanPham.tenSanPham}}</li>
+                </ol>
+            </nav>
+
+
+            <h2>{{SanPham.tenSanPham}}</h2>
+            <hr>
+            <span>Mã SP: {{SanPham.maSP}}</span>
+            <div class="infoProduct">
+                <h5>Mô Tả</h5>
+                <p>{{SanPham.moTaSanPham}}</p>
+                <hr>
+
+                <div class="price">
+                    <span class="fs-4 text-danger fw-bold">{{SanPham.giaSanPham | number:0}} VNĐ</span>
+                    <span class="fs-5 text-decoration-line-through">{{SanPham.giaGoc| number:0}}
+                        VNĐ</span>
+                </div>
+
+                <label for="" class="fw-bold">Số Lượng:</label>
+                <input class="text-center" type="number" name="" id="" min="1" max="{{itemProduct.soLuong}}" value="1"
+                    style="width: 50px;" ng-model="soLuongGioHang">
+                <div class="mt-5">
+                    <a href="#" class=" btnProductTra" data-bs-toggle="modal" data-bs-target="#ThemSoLuong"
+                        ng-model="showBtn" ng-click="getInfo(SanPham.maSP,1)">Mua
+                        Ngay</a>
+                    <a href="#" class=" btnProductTra" data-bs-toggle="modal" data-bs-target="#ThemSoLuong"
+                        ng-model="showGioHang" ng-click="getInfo(SanPham.maSP,2)">Thêm giỏ hàng</a>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <hr>
+    <div class="headcontent">
+        <h2 class="fs-2 fw-bold mt-5" style="color: #72A603;">Sản Phẩm Liên Quan</h2>
+        <hr>
+    </div>
+
+    <div class="slideVip container">
+        <div class="containSP  " ng-style="{'transform': 'translateX(' + slide.SPbanChay + 'px)'}">
+            <div class="col-md-3 col-xs-12 itemProduct" ng-repeat="a in arrProduct">
+                <a href="#/chi-tiet-sp/{{a.maSP}}" class="text-decoration-none text-dark">
+                    <div class="card productItem pb-3">
+                        <img ng-src="./img/{{a.hinhAnh}}" class="card-img-top img-fluid imgProduct" alt="..."
+                            style="height: 50%;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fs-4 ">{{a.tenSanPham}}</h5>
+                            <p class="card-text  fs-5 fw-bold pb-3">{{a.giaSanPham | number:0}} VNĐ</p>
+                            <a href="#" class=" btnProductTra">Mua Ngay</a>
+                            <a href="#" class=" btnProductTra">Thêm giỏ hàng</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <button class="btnPrev" type="button">
+            <span class="carousel-control-prev-icon" ng-click="prevousSlide(slide.SPbanChay,2)"></span>
+
+        </button>
+        <button class="btnNext" type="button" ng-click="nextSlide(arrProduct,slide.SPbanChay,2)">
+            <span class="carousel-control-next-icon"></span>
+
+        </button>
+    </div>
+
+    <div class="modal fade" id="ThemSoLuong" tabindex="-1" aria-labelledby="ThemDanhMuc" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" ng-show="!isLogin">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Mua Sản Phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    Vui Lòng Đăng Nhập Để Mua Hàng
+                </div>
+
+
+
+            </div>
+            <div class="modal-content" ng-show="isLogin">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Mua Sản Phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <div class="col-md-3 col-xs-12">
+                        <img ng-src="./img/{{itemProduct.hinhAnh}}" alt="">
+                    </div>
+                    <div class="col-md-9 col-xs-12">
+
+
+
+
+
+                        <h2>{{itemProduct.tenSanPham}}</h2>
+                        <span>Mã SP: {{itemProduct.maSP}}</span>
+                        <hr>
+                        <div class="infoProduct">
+                            <h5>Mô Tả</h5>
+                            <p>{{itemProduct.moTaSanPham}}</p>
+
+                            <hr>
+
+                            <div class="price">
+                                <span class="fs-4 text-danger fw-bold">{{itemProduct.giaSanPham | number:0}} VNĐ</span>
+                                <span class="fs-5 text-decoration-line-through">{{itemProduct.giaGoc| number:0}}
+                                    VNĐ</span>
+                            </div>
+
+                            <div>
+                                <br>
+                                <label for="" class="fw-bold">Số Lượng:</label>
+                                <input class="text-center" type="number" name="" id="" min="1"
+                                    max="{{itemProduct.soLuong}}" value="1" style="width: 50px;"
+                                    ng-model="soLuongGioHang">
+
+                            </div>
+                            <div class="mt-5">
+                                <button type="button" class="btn btn-primary fs-5 " style="background-color: #72A603;"
+                                    ng-show="showGioHang" ng-click="themGiohang()">Thêm
+                                    Vào Giỏ Hàng</button>
+                                <a href="#thanhtoan" data-bs-dismiss="modal" aria-label="Close"><button type="button"
+                                        class="btn btn-secondary fs-5" style="background-color: #72A603;"
+                                        ng-show="showBtn" ng-click="muaNgay()">Mua
+                                        Ngay</button></a>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

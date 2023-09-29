@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <title>CRUD Sản phẩm</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
+</head>
+
+<body ng-controller="productController">
+    <h1>CRUD Sản phẩm</h1>
+
+    <!-- Danh sách sản phẩm -->
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="product in products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>
+                <button ng-click="editProduct(product)">Sửa</button>
+                <button ng-click="deleteProduct(product.id)">Xóa</button>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Form thêm/sửa sản phẩm -->
+    <h2>{{ formTitle }}</h2>
+    <form ng-submit="saveProduct()">
+        <label for="productName">Tên sản phẩm:</label>
+        <input type="text" id="productName" ng-model="currentProduct.name" required>
+
+        <label for="productPrice">Giá:</label>
+        <input type="number" id="productPrice" ng-model="currentProduct.price" required>
+
+        <button type="submit">{{ formAction }}</button>
+    </form>
+
+    <!-- Script AngularJS -->
+    <script>
+        angular.module('myApp', [])
+            .controller('productController', function ($scope, $http) {
+                $scope.products = [];
+                $scope.currentProduct = {};
+                $scope.formTitle = 'Thêm sản phẩm';
+                $scope.formAction = 'Thêm';
+
+                // Lấy danh sách sản phẩm
+                $http.get("http://localhost:3000/products")
+                    .then(function (response) {
+                        $scope.products = response.data;
+                    });
+
+                // Xóa sản phẩm
+                $scope.deleteProduct = function (productId) {
+                    $http.delete(`http://localhost:3000/products/${productId}`)
+                        .then(function (response) {
+                            // Xóa sản phẩm thành công
+                            // Cập nhật lại danh sách sản phẩm
+                            $scope.products = $scope.products.filter(function (product) {
+                                return product.id !== productId;
+                            });
+                        });
+                };
+
+                // Sửa sản phẩm
+                $scope.editProduct = function (product) {
+                    $scope.currentProduct = angular.copy(product);
+                    $scope.formTitle = 'Sửa sản phẩm';
+                    $scope.formAction = 'Cập nhật';
+                };
+
+                // Thêm/Sửa sản phẩm
+                $scope.saveProduct = function () {
+                    if ($scope.currentProduct.id) {
+                        // Cập nhật sản phẩm
+                        $http.put(`http://localhost:3000/products/${$scope.currentProduct.id}`, $scope.currentProduct)
+                            .then(function (response) {
+                                // Cập nhật sản phẩm thành công
+                                // Cập nhật lại danh sách sản phẩm
+                                $scope.products = $scope.products.map(function (product) {
+                                    if (product.id === $scope.currentProduct.id) {
+                                        return $scope.currentProduct;
+                                    }
+                                    return product;
+                                });
+                                $scope.resetForm();
+                            });
+                    } else {
+                        // Thêm sản phẩm mới
+                        $http.post("http://localhost:3000/products", $scope.currentProduct)
+                            .then(function (response) {
+                                // Thêm sản phẩm thành công
+                                // Thêm sản phẩm vào danh sách
+                                $scope.products.push(response.data);
+                                $scope.resetForm();
+                            });
+                    }
+                };
+
+                // Đặt lại form
+                $scope.resetForm = function () {
+                    $scope.currentProduct = {};
+                    $scope.formTitle = 'Thêm sản phẩm';
+                    $scope.formAction = 'Thêm';
+                };
+            });
+    </script>
+</body>
+
+</html>

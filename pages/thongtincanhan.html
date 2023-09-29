@@ -1,0 +1,66 @@
+<section class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-7 px-3">
+            <form name="thongtincanhan">
+                <h3>Thông Tin Cá Nhân</h3>
+                <div class="row">
+                    <label for="" class="p-0">Họ Và Tên:</label> <br>
+                    <input type="text" name="hoten" id="" ng-model="SaveUser.ten" required>
+                    <span class="text-danger" ng-show="thongtincanhan.hoten.$invalid" ng-max>Không để trống họ và
+                        tên</span>
+                </div>
+                <div class="row">
+                    <label for="" class="p-0">Email:</label> <br>
+                    <input type="email" name="email" id="" ng-model="SaveUser.email" required>
+                    <span class="text-danger" ng-show="thongtincanhan.email.$error.required ">Không để trống
+                        email</span>
+                    <span class="text-danger" ng-show="thongtincanhan.email.$invalid ">Vui lòng nhập đúng định dạng
+                        email</span>
+                </div>
+                <div class="row">
+                    <label for="" class="p-0">SĐT:</label> <br>
+                    <input type="text" name="phone" id="" ng-model="SaveUser.phone" required>
+                    <span class="text-danger" ng-show="thongtincanhan.phone.$invalid">Vui lòng nhập đúng định dạng
+                        SĐT</span>
+                </div>
+                <button class="btn btn-primary mt-3 mb-5" style="background-color: #72A603;" ng-click="luuThayDoi()"
+                    ng-disabled="thongtincanhan.$invalid">Lưu
+                    Thay Đổi</button>
+            </form>
+        </div>
+        <div class="col-md-5">
+            <h3>Đổi Mật Khẩu</h3>
+            <form name="doimatkhau">
+
+                <div class="row">
+                    <label for="" class="p-0"> Mật Khẩu Cũ:</label> <br>
+                    <input type="text" name="" id="" ng-model="matKhauCu">
+                </div>
+                <div class="row">
+                    <label for="fname">Mật Khẩu Mới:</label><br>
+                    <input type="text" id="fname" name="matkhaumoi" value="" ng-model="matkhau" required><br>
+                    <span ng-show="doimatkhau.matkhaumoi.$invalid && doimatkhau.matkhaumoi.$dirty"
+                        class="text-danger">Mật Khẩu là
+                        bắt buộc nhập</span><br>
+                </div>
+                <div class="row">
+                    <label for="lname">Nhập Lại Mật Khẩu:</label><br>
+                    <input type="text" id="lname" name="XacNhanMatKhau" value="" ng-model="XacNhan" required><br>
+                    <span ng-show="doimatkhau.XacNhanMatKhau.$invalid && doimatkhau.XacNhanMatKhau.$dirty"
+                        class="text-danger">Không để
+                        trống trường
+                        này</span>
+                    <span ng-show="info.matkhau!=matkhau && dangky.XacNhanMatKhau.$dirty" class="text-danger">Vui lòng
+                        nhập đúng
+                        xác nhận mật khẩu</span><br>
+
+                    <br>
+                </div>
+                <button class="btn btn-primary mt-3" style="background-color: #72A603;"
+                    ng-disabled="doimatkhau.$invalid" ng-click="
+                    doiMatKhau()">Đổi Mật
+                    Khẩu</button>
+            </form>
+        </div>
+    </div>
+</section>
